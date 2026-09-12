@@ -51,6 +51,7 @@ extends Component
 		if newValue != isEnabled:
 			isEnabled = newValue
 			self.set_physics_process(isEnabled and (is_instance_valid(activeTarget) or shouldUpdateTargetRegularly))
+			if not isEnabled: inputComponent.setMovementInputs(Vector2.ZERO)
 
 #endregion
 
